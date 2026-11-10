@@ -385,9 +385,7 @@ component > cta
     font-weight: 700;
     letter-spacing: 0.05em;
     color: var(--color-white);
-    background: linear-gradient(90deg,
-            var(--color-button-background02) 0%,
-            var(--color-button-background) 100%);
+    background: linear-gradient(90deg, var(--color-button-background02) 0%, var(--color-button-background) 100%);
     width: 100%;
     max-width: 20rem;
     margin: 0 auto;
@@ -436,24 +434,18 @@ component > button
 ------------------------------*/
 .c-btn-icon {
     display: inline-flex;
-    /* 🌟 spanタグにwidthやaspect-ratioを効かせるために必須 */
     align-items: center;
-    /* 🌟 中の矢印画像を上下中央に配置 */
     justify-content: center;
-    /* 🌟 中の矢印画像を左右中央に配置 */
     width: 1.875rem;
     aspect-ratio: 1;
     border-radius: 50%;
     overflow: hidden;
-    /* 🌟 丸枠からはみ出た画像部分をカットする */
 }
 
 .c-icon-arrow {
     width: 100%;
     height: 100%;
-    /* 🌟 縦幅も枠いっぱいに広げる */
     object-fit: contain;
-    /* 🌟 矢印の比率を保ったまま綺麗に枠に収める */
     flex-shrink: 0;
 }
 
@@ -950,7 +942,7 @@ layout > header
 
 @media (min-width: 768px) {
     .l-footer__top {
-        border-bottom: 0.0625rem solid #ffffff;
+        border-bottom: 0.0625rem solid var(--color-white);
         padding-bottom: 4.125rem;
         padding-inline: 6.25rem 6.25rem;
     }
@@ -1004,14 +996,6 @@ layout > header
     line-height: calc(26 / 14);
     color: var(--color-white);
     margin-bottom: 1rem;
-}
-
-@media (min-width: 768px) {
-    .l-footer__address {
-        font-size: 0.875rem;
-        line-height: calc(26 / 14);
-        margin-bottom: 1rem;
-    }
 }
 
 .l-footer__contact-text {
@@ -1145,14 +1129,6 @@ layout > header
     color: var(--color-white-off);
 }
 
-@media (min-width: 768px) {
-    .l-footer__sub-link {
-        font-size: 0.75rem;
-        line-height: calc(28 / 12);
-        color: var(--color-white);
-    }
-}
-
 .l-footer__copyright {
     font-size: 0.75rem;
     line-height: calc(28 / 12);
@@ -1282,14 +1258,8 @@ layout > header
     bottom: 0;
     right: 0;
     opacity: 0.2;
-    mask-image: linear-gradient(to bottom,
-            transparent 0%,
-            transparent 10%,
-            var(--color-white) 40%);
-    -webkit-mask-image: linear-gradient(to bottom,
-            transparent 0%,
-            transparent 10%,
-            var(--color-white) 40%);
+    mask-image: linear-gradient(to bottom, transparent 0%, transparent 10%, var(--color-white) 40%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, transparent 10%, var(--color-white) 40%);
 }
 
 .p-feature::after {
@@ -1370,8 +1340,6 @@ layout > header
         width: 68.6875rem;
         height: auto;
         aspect-ratio: 1099 / 264;
-        object-fit: cover;
-        display: block;
     }
 
     .p-feature__title {
@@ -1593,7 +1561,6 @@ layout > header
     .p-feature__btn::before {
         content: "";
         height: 0.0625rem;
-        background-color: var(--color-white);
     }
 }
 
@@ -1732,7 +1699,6 @@ layout > header
         top: 0;
         right: 0;
         width: 35rem;
-        background-color: var(--color-white);
         padding-inline: 5.5rem;
         padding-block: 4.75rem 5rem;
         margin-top: 0;
@@ -1955,7 +1921,6 @@ layout > header
         content: "";
         top: 7.5rem;
         left: 2.125rem;
-        transform: translate(-50%, -50%);
         width: 1.1875rem;
         height: 1.1875rem;
     }
@@ -2086,7 +2051,6 @@ layout > header
 
 @media (min-width: 768px) {
     .p-works__content-title {
-        font-size: 1.5rem;
         padding-bottom: 0.625rem;
     }
 }
@@ -2118,9 +2082,7 @@ layout > header
 @media (min-width: 768px) {
     .p-works__btn {
         font-size: 1.0625rem;
-        width: 100%;
         max-width: 23.75rem;
-        margin: 0 auto;
         padding-block: 1.375rem;
     }
 }
@@ -2403,12 +2365,6 @@ layout > header
 
 .p-company__title-en {
     margin-bottom: 1.5rem;
-}
-
-@media (min-width: 768px) {
-    .p-company__title-en {
-        margin-bottom: 1.5rem;
-    }
 }
 
 .p-company__text {

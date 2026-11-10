@@ -9,7 +9,7 @@
     // ==========================================
     // 共通：固定ページのスラッグ
     // ==========================================
-    $top_id = get_option('page_on_front');
+    $top_id = get_option('page_on_front') ?: get_the_ID();
     ?>
 
     <!-- kv -->
@@ -362,7 +362,7 @@
     <!-- company -->
     <?php
     // ==========================================
-    // company php (「トップページの設定」ページから直接取得)
+    // company php
     // ==========================================
 
     $default_pc = get_theme_file_uri('image/company.jpg');
@@ -561,9 +561,8 @@
     <!-- contact -->
     <?php
     // ==========================================
-    // contact php (「トップページの設定」ページから直接取得)
+    // contact php
     // ==========================================
-    // 1. CSSの背景用画像（第2引数の $contact_page_id を削除し、現在のページから直接取得）
     $img_contact_pc = get_field('contact_bg_pc', $top_id) ?: get_theme_file_uri('image/contact.jpg');
     $img_contact_sp = get_field('contact_bg_sp', $top_id) ?: get_theme_file_uri('image/contact_sp.jpg');
     ?>
@@ -605,4 +604,6 @@
         </div>
     </section>
 
-    <?php get_footer(); ?>
+</main>
+
+<?php get_footer(); ?>

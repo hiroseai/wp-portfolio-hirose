@@ -34,7 +34,6 @@
                 <img src="<?php echo esc_url(get_theme_file_uri('/image/hamburger-button.png')); ?>" class="l-header__hamburger-button-img" width="60" height="42" alt="" decoding="async">
             </div>
             <div class="l-header__hamburger-menu js-header__hamburger-menu">
-
                 <nav class="l-header__nav">
                     <ul class="l-header__list">
                         <?php
@@ -46,26 +45,24 @@
                             $menu_items = wp_get_nav_menu_items($menu->term_id);
 
                             if (! empty($menu_items)) :
-                                $count = 0;
-                                $total_items = count($menu_items);
-
                                 foreach ((array) $menu_items as $key => $menu_item) :
-                                    $count++;
-                                    $is_contact = ($count === $total_items);
-                                    $li_class = $is_contact ? 'l-header__item l-header__item--contact' : 'l-header__item';
-                                    $a_class = $is_contact ? 'l-header__item-link l-header__item-link--contact' : 'l-header__item-link';
                                     $url = $menu_item->url;
                                     $title = $menu_item->title;
                         ?>
-
-                                    <li class="<?php echo esc_attr($li_class); ?>">
-                                        <a href="<?php echo esc_url($url); ?>" class="<?php echo esc_attr($a_class); ?>"><?php echo esc_html($title); ?></a>
+                                    <li class="l-header__item">
+                                        <a href="<?php echo esc_url($url); ?>" class="l-header__item-link"><?php echo esc_html($title); ?></a>
                                     </li>
-
-                        <?php endforeach;
+                        <?php
+                                endforeach;
                             endif;
                         endif;
                         ?>
+
+                        <li class="l-header__item l-header__item--contact">
+                            <a href="<?php echo esc_url(home_url('#contact')); ?>" class="l-header__item-link l-header__item-link--contact">
+                                <span class="l-header__contact-text">お問い合わせ</span>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
 
@@ -73,7 +70,6 @@
                     <div class="c-contact-cta__container l-header__cta-container">
 
                         <div class="c-contact-cta__info l-header__cta-info">
-                            <!-- ★修正箇所：'option' を $top_id に変更し、デフォルト値を設定 -->
                             <?php $header_tel = get_field('cta_tel', $top_id) ?: '000-123-4567'; ?>
                             <?php if (!empty($header_tel)) : ?>
                                 <div class="c-contact-cta__tel l-header__cta-tel">
@@ -81,7 +77,6 @@
                                 </div>
                             <?php endif; ?>
 
-                            <!-- ★修正箇所：'option' を $top_id に変更し、デフォルト値を設定 -->
                             <?php $header_hours = get_field('cta_hours', $top_id) ?: '営業時間 / 平日 9:00 - 18:00'; ?>
                             <?php if (!empty($header_hours)) : ?>
                                 <div class="c-contact-cta__hours l-header__cta-hours">
@@ -95,10 +90,7 @@
                         </div>
 
                         <ul class="c-sns-icon-list l-header__sns-list">
-                            <!-- -----------------------------------------
-              X (旧Twitter)
-            ------------------------------------------ -->
-                            <!-- ★修正箇所：'option' を $top_id に変更 -->
+                            <!-- X (旧Twitter) -->
                             <?php $twitter_url = get_field('sns_twitter', $top_id) ?: 'https://x.com'; ?>
                             <li class="c-sns-icon c-sns-icon--x-twitter l-header__sns-item l-header__sns-item--x-twitter">
                                 <a href="<?php echo esc_url($twitter_url); ?>" class="c-sns-icon__link c-sns-icon__link--x-twitter" target="_blank" rel="noopener noreferrer">
@@ -108,10 +100,7 @@
                                 </a>
                             </li>
 
-                            <!-- -----------------------------------------
-              YouTube
-            ------------------------------------------ -->
-                            <!-- ★修正箇所：'option' を $top_id に変更 -->
+                            <!-- YouTube -->
                             <?php $youtube_url = get_field('sns_youtube', $top_id) ?: 'https://youtube.com'; ?>
                             <li class="c-sns-icon c-sns-icon--youtube l-header__sns-item l-header__sns-item--youtube">
                                 <a href="<?php echo esc_url($youtube_url); ?>" class="c-sns-icon__link c-sns-icon__link--youtube" target="_blank" rel="noopener noreferrer">
@@ -121,10 +110,7 @@
                                 </a>
                             </li>
 
-                            <!-- -----------------------------------------
-              Instagram
-            ------------------------------------------ -->
-                            <!-- ★修正箇所：'option' を $top_id に変更 -->
+                            <!-- Instagram -->
                             <?php $instagram_url = get_field('sns_instagram', $top_id) ?: 'https://instagram.com'; ?>
                             <li class="c-sns-icon c-sns-icon--instagram l-header__sns-item l-header__sns-item--instagram">
                                 <a href="<?php echo esc_url($instagram_url); ?>" class="c-sns-icon__link c-sns-icon__link--instagram" target="_blank" rel="noopener noreferrer">
